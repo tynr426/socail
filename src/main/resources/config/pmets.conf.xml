@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmets>
+	<pkey>usp</pkey>
+	<pmet>
+		<inface>usp</inface>
+		<domain>http://192.168.4.21:8080/user-platform</domain>
+		<key>usp.usp_coomn</key>
+		<secret>AX6CNkwaY8QsetF5D3nJy7mJzXpnbJ7W</secret>
+	</pmet>
+	<pmet>
+		<inface>wfx</inface>
+		<domain>http://192.168.4.125:8080/wcMall</domain>
+		<key>test</key>
+		<secret>BnKJc4n2JdiZt6pZxfrN3wzNyHQAbcKf</secret>
+	</pmet>
+	<pmet>
+		<inface>wcspc</inface>
+		<domain>http://192.168.4.125:8089/wcs_pc</domain>
+		<key>wcs_pc_commn</key>
+		<secret>bEWFaRM5KjfQEDTBX2BdwsCZEHdRCKwT</secret>
+	</pmet>
+	<pmet>
+		<inface>wsc</inface>
+		<domain>http://ydmwp.ser1.ydmyun.com</domain>
+		<key>ydmwp.usp_commn</key>
+		<secret>2kezc6SKkxPNeF2Qk5Sy4CGw8P4BQ68T</secret>
+	</pmet>
+	
+</pmets>

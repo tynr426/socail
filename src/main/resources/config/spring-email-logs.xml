@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+ xmlns:context="http://www.springframework.org/schema/context"  
+ xmlns:p="http://www.springframework.org/schema/p"  
+ xmlns:mvc="http://www.springframework.org/schema/mvc"  
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+ xsi:schemaLocation="http://www.springframework.org/schema/beans  
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+      http://www.springframework.org/schema/context  
+      http://www.springframework.org/schema/context/spring-context.xsd  
+      http://www.springframework.org/schema/mvc  
+      http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+    
+    <bean id="sysErrorEmails" class="com.scwc.framework.mail.Mail">
+		<property name="subject" value="user-platform-common-1.0.2 {name}异常提醒"></property>   <!--  主题 --> 	
+    	<property name="displayName" value="user-platform-common-1.0.2" /><!-- 定义发件人别名 -->
+    	<property name="from" value="scwcgg@126.com" />
+    	<property name="smtpServer" value="smtp.126.com"></property><!-- 邮件服务器 -->
+    	<property name="username" value="scwcgg@126.com"></property><!-- 登录的用户名 -->
+    	<property name="password" value="@scwcgg2014"></property><!-- 密码 -->
+    	<property name="debug" value="false"></property>
+    	<property name="charset" value="utf-8"></property><!-- 字符集 -->
+    	<property name="isAuth" value="true" /><!-- 是否需要认证 -->
+    	<property name="isHtml" value="true"></property><!-- 是否是html -->
+    	<property name="tos"><!-- 发送地址 -->
+    		<array>
+    			<value>scwcgg@126.com</value>
+    			<value>2771575726@qq.com</value>
+    			<value>284409658@qq.com</value>
+    			<value>604220894@qq.com</value>
+    			<value>379904364@qq.com</value>
+    		</array>
+    	</property>
+    	<property name="content">
+    		<value>
+    			<![CDATA[
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>wxsjb_v2 exception:{name}</title>
+<style>
+.content{color: red;width: 90%;margin: auto;word-break: break-all;}.content p{color:#666;}
+H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} 
+H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} 
+H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} 
+BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} 
+B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} 
+P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}
+A {color : black;}A.name {color : black;}HR {color : #525D76;}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>{name}</h1>
+<hr size="1" noshade="noshade">
+<b>message</b>
+{text}
+<hr size="1" noshade="noshade">
+<h3>错误时间:{nowTime}</h3>
+<p>Sichuan Minimally invasive advertising co.,LTD 2IAppErrorLogsEntityService<p>
+</div>
+ </body>
+</html>
+    			]]>
+    		</value>
+    	</property>
+    </bean>
+	
+ </beans>  

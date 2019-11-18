@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" [
+<!ENTITY contextInclude SYSTEM "org/springframework/web/context/WEB-INF/contextInclude.xml">
+]>
+
+<beans>
+
+	<!-- 系统配置数据 -->
+	<bean id="app_confMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="table_code" value="usp" />
+				<!-- 是否打印sql -->
+				<entry key="show_sql" value="false" />
+				<!-- update:创建或者更新表结构 none:不会自动创建表 -->
+				<entry key="auto_sql" value="none" />
+				<!-- update:创建或者更新权限结构 none:不会自动创建跟新权限 -->
+				<entry key="update_power" value="none" />
+				<!-- 当前连接的数据库名 -->
+				<entry key="use_data" value="usp" />
+				<!-- 方言 -->
+				<entry key="dialect" value="mysql" />
+				<!-- 请求编码 -->
+				<entry key="request.encoding" value="UTF-8" />
+				<!-- 开启错误日志邮件发送 -->
+				<entry key="send_error_email" value="false"/>
+				
+				<!-- 允许上传的白名单 -->
+				<entry key="file.upload.ext" value="jpg,png,gif,jpeg,bmp"/>
+				<!-- 上传文件最大大小 单位MB-->
+				<entry key="file.upload.max.size" value="1"/>
+				<!-- 上传文件保存路径-->
+				<entry key="file.upload.path" value="D:/wxb/api/usp"/>
+				<!-- 文件domain输出路径-->
+				<entry key="file.upload.domain" value="http://127.0.0.1:8080/wxopen"/>
+				<!-- 请求url后缀名 -->
+				<entry key="url.request.suffix" value=".php"/>	
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	<!-- 持久化Bean -->
+	<bean id="app_scanOrmPath" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<value>com/user/platform/entity</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- 权限Bean -->
+	<bean id="app_scanPowerPath" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<value>com/user/platform/contrs/admin</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="applicationConfig" class="com.scwc.framework.spring.config.ApplicationConfig">
+		<property name="confMap">
+			<ref local="app_confMap" />
+		</property>
+		<property name="scanOrmPath">
+			<ref local="app_scanOrmPath" />
+		</property>
+		<property name="scanPowerPath">
+			<ref local="app_scanPowerPath" />
+		</property>
+	</bean>
+	<bean id="powermenuconfig.configxml" class="java.lang.String">
+		<constructor-arg>
+			<value>
+				<![CDATA[
+					<menus>
+						<menu name="首页" code="root-home" sort="1" classname="icon-home" url="/admin/main/welcome"></menu>
+					</menus>
+				]]>
+			</value>
+		</constructor-arg>
+	</bean><!-- 权限菜单 -->
+	
+	
+</beans>

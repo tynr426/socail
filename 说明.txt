@@ -1,0 +1,27 @@
+scwc_framework-1.03.jar  这包是本地资源的，在Mavne Repository建一个local》scwc_framework》1.03文件路径
+
+
+
+
+
+DROP TABLE IF EXISTS `mall_userbasic`;
+CREATE TABLE `mall_userbasic` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `laloginDate` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `headImgUrl` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nickName` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `levelUid` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `userName` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `loginPsw` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lasyncsDate` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `loginUser` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `openId` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `creator` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `createdTime` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lastOperator` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `updateTime` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uid` (`uid`),
+  KEY `uid_2` (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
